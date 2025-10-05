@@ -1,0 +1,83 @@
+{
+  "identifier": "kirilldakhniuk.Scratchpad",
+  "name": "Scratchpad",
+  "organization": "Kirill Dakhniuk",
+  "description": "",
+  "version": "1.0",
+  "categories": ["sidebars"],
+
+  "bugs": {
+    "url": "https://github.com/kirilldakhniuk/Scratchpad/issues"
+  },
+  "homepage": "https://github.com/kirilldakhniuk/Scratchpad#readme",
+
+  "main": "main.js",
+
+  "entitlements": {
+    "filesystem": "readwrite"
+  },
+
+  "sidebars": [
+    {
+      "id": "scratchpad",
+      "name": "Scratchpad",
+      "smallImage": "sidebar-icon-small",
+      "smallSelectedImage": "sidebar-icon-small",
+      "largeImage": "sidebar-icon-small",
+      "largeSelectedImage": "sidebar-icon-small",
+      "sections": [
+        {
+          "id": "scratchpad-notes",
+          "name": "Notes",
+          "placeholderText": "No notes yet — click + to create one",
+          "headerCommands": [
+            {
+              "title": "New",
+              "image": "__builtin.add",
+              "command": "scratchpad.add"
+            },
+            {
+              "title": "Open",
+              "image": "__builtin.open",
+              "command": "scratchpad.open",
+              "when": "viewItem != null"
+            },
+            {
+              "title": "Remove",
+              "image": "__builtin.remove",
+              "command": "scratchpad.remove",
+              "when": "viewItem != null"
+            }
+          ],
+          "contextCommands": [
+            {
+              "title": "Open",
+              "command": "scratchpad.open",
+              "when": "viewItem != null"
+            },
+            {
+              "title": "Remove",
+              "command": "scratchpad.remove",
+              "when": "viewItem != null"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "commands": {
+    "extensions": [
+      {
+        "title": "Scratchpad: New Note",
+        "command": "scratchpad.add",
+        "shortcut": "ctrl-cmd-n"
+      },
+      {
+        "title": "Scratchpad: Search Note",
+        "command": "scratchpad.search",
+        "shortcut": "ctrl-cmd-l"
+      }
+    ]
+  }
+}
